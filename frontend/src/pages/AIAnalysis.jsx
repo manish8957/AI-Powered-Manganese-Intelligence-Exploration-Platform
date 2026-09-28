@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { predictFullAnalysis, predictPotential, predictReserve } from '../services/mlService';
-import Navbar from '../components/Navbar';
-import Sidebar from '../components/Sidebar';
+import Layout from '../components/Layout';
 import DisclaimerBanner from '../components/DisclaimerBanner';
 import FeatureImportanceChart from '../components/FeatureImportanceChart';
 import { Cpu, Play, Layers, Award, AlertCircle, CheckCircle, HelpCircle, RefreshCw } from 'lucide-react';
@@ -192,13 +191,9 @@ const AIAnalysis = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0b0f19] text-slate-100 flex flex-col font-sans">
-      <Navbar />
-      <div className="flex flex-1">
-        <Sidebar />
-        <main className="flex-1 p-6 space-y-6 overflow-y-auto max-w-7xl">
-          {/* Header */}
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+    <Layout>
+      {/* Header */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div>
               <div className="flex items-center space-x-2">
                 <h1 className="text-2xl font-bold font-mono text-slate-100 uppercase tracking-tight">
@@ -431,9 +426,7 @@ const AIAnalysis = () => {
               )}
             </div>
           </div>
-        </main>
-      </div>
-    </div>
+    </Layout>
   );
 };
 

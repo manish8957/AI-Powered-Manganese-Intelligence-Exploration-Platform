@@ -45,16 +45,16 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0b0f19] text-slate-100 flex items-center justify-center p-6 font-sans selection:bg-emerald-500 selection:text-slate-950">
-      <div className="glass-panel w-full max-w-md rounded-2xl border border-slate-800 p-8 space-y-6 shadow-2xl relative overflow-hidden">
+    <div className="min-h-screen bg-[#0b0f19] text-slate-100 flex items-center justify-center p-3 sm:p-6 font-sans selection:bg-emerald-500 selection:text-slate-950">
+      <div className="glass-panel w-full max-w-md rounded-2xl border border-slate-800 p-5 sm:p-8 space-y-5 sm:space-y-6 shadow-2xl relative overflow-hidden">
         {/* Glow accent */}
         <div className="absolute -top-20 -left-20 w-40 h-40 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
         <div className="text-center space-y-2">
-          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-cyan-600 flex items-center justify-center shadow-lg shadow-emerald-500/20 mx-auto">
-            <Pickaxe className="w-6 h-6 text-slate-950 font-bold" />
+          <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-cyan-600 flex items-center justify-center shadow-lg shadow-emerald-500/20 mx-auto">
+            <Pickaxe className="w-5 h-5 sm:w-6 sm:h-6 text-slate-950 font-bold" />
           </div>
-          <h2 className="font-bold text-xl font-mono text-slate-100 uppercase tracking-tight">National Control Center</h2>
+          <h2 className="font-bold text-lg sm:text-xl font-mono text-slate-100 uppercase tracking-tight">National Control Center</h2>
           <p className="text-xs font-mono text-slate-400">Manganese Intelligence & Exploration Platform</p>
         </div>
 
