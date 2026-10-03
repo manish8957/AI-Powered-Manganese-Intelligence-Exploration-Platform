@@ -25,23 +25,10 @@ const Login = () => {
         navigate('/dashboard');
       }
     } catch (err) {
-      setError(err.response?.data?.message || err.message || 'Login failed. Try demo login or register a new account.');
+      setError(err.response?.data?.message || err.message || 'Login failed. Please check your credentials or register a new account.');
     } finally {
       setLoading(false);
     }
-  };
-
-  const handleQuickDemo = (roleName, demoEmail) => {
-    const demoUser = {
-      id: 'demo_user_' + Date.now(),
-      name: `SIH ${roleName}`,
-      email: demoEmail,
-      role: roleName,
-      organization: 'National Mineral Control Center'
-    };
-    localStorage.setItem('sih_token', 'demo_token_' + Date.now());
-    localStorage.setItem('sih_user', JSON.stringify(demoUser));
-    navigate('/dashboard');
   };
 
   return (
@@ -105,22 +92,13 @@ const Login = () => {
           </button>
         </form>
 
-        <div className="border-t border-slate-800/80 pt-4 space-y-3">
+        <div className="border-t border-slate-800/80 pt-4">
           <div className="flex items-center justify-between text-xs font-mono">
             <span className="text-slate-400">Don't have an account?</span>
             <Link to="/register" className="text-emerald-400 font-bold hover:underline flex items-center space-x-1">
               <UserPlus className="w-3.5 h-3.5 inline mr-1" />
               <span>Register Account</span>
             </Link>
-          </div>
-
-          <div className="pt-2 text-center">
-            <button
-              onClick={() => handleQuickDemo('Analyst', 'guest.analyst@gsi.gov.in')}
-              className="text-xs font-mono text-cyan-400 hover:text-cyan-300 underline"
-            >
-              Or Enter via SIH Quick Demo Mode →
-            </button>
           </div>
         </div>
       </div>
